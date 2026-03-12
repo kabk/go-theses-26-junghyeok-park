@@ -1,0 +1,30 @@
+/* -----------------------------------------
+   기본 설정
+----------------------------------------- */
+
+html {
+    line-height: 1.5;
+    font-size: 16px;
+    font-family:'Times New Roman', Times, serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    line-height: inherit;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+    background: #009fb8;
+    color: #111111;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, em {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
