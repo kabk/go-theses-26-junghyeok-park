@@ -1172,7 +1172,7 @@
     if (current) {
       setActiveLink(current.id, {
         smooth: false,
-        moveIntoView: window.innerWidth <= 900   // 🔥 핵심 (모바일만)
+        moveIntoView: window.innerWidth <= 900
       });
     }
     tocTicking = false;
@@ -1184,7 +1184,6 @@
     requestAnimationFrame(updateActiveChapter);
   }
 
-  // ✅ 스크롤 이벤트
 const textPanel = document.querySelector('.text-panel');
 
 function bindScrollSource() {
@@ -1207,7 +1206,6 @@ window.addEventListener('resize', () => {
   onScroll();
 });
 
-  // ✅ 클릭 이벤트
   tocLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
       const targetId = link.dataset.target;
@@ -1222,7 +1220,6 @@ window.addEventListener('resize', () => {
       });
 
       if (window.innerWidth <= 900) {
-        // 📱 모바일 → offset 필요
         const y = target.offsetTop - 20;
 
         window.scrollTo({
@@ -1236,7 +1233,6 @@ window.addEventListener('resize', () => {
         });
 
       } else {
-        // 💻 데스크탑 → 기본 scrollIntoView
         target.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
@@ -1245,7 +1241,6 @@ window.addEventListener('resize', () => {
     });
   });
 
-  // 터치 상태 관리 (모바일 TOC 안정화)
   if (sidebar) {
     sidebar.addEventListener('touchstart', () => {
       userIsTouchingToc = true;
@@ -1280,7 +1275,6 @@ window.addEventListener('resize', () => {
     }, { passive: true });
   }
 
-  // 초기 상태
   if (chapters.length > 0) {
     setTimeout(() => {
       setActiveLink(chapters[0].id, {
