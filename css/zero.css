@@ -4,8 +4,9 @@
 
 html {
     line-height: 1.5;
-    font-size: 16px;
+    font-size: 17px;
     font-family:'Times New Roman', Times, serif;
+    font-feature-settings: "kern";
     scroll-behavior: smooth;
 }
 
@@ -14,8 +15,8 @@ body {
     line-height: inherit;
     text-rendering: optimizeLegibility;
     font-kerning: normal;
-    background: #009fb8;
-    color: #111111;
+    /* background: #ffffff; */
+    /* color: #111111; */
 }
 
 * {
@@ -27,4 +28,3 @@ h1, h2, h3, h4, h5, h6, p, a, em {
     font-size: inherit;
     font-weight: inherit;
 }
-
