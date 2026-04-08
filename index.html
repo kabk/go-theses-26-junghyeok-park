@@ -1185,8 +1185,27 @@
   }
 
   // ✅ 스크롤 이벤트
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
+const textPanel = document.querySelector('.text-panel');
+
+function bindScrollSource() {
+  if (textPanel) {
+    textPanel.removeEventListener('scroll', onScroll);
+  }
+  window.removeEventListener('scroll', onScroll);
+
+  if (window.innerWidth <= 900) {
+    window.addEventListener('scroll', onScroll, { passive: true });
+  } else if (textPanel) {
+    textPanel.addEventListener('scroll', onScroll, { passive: true });
+  }
+}
+
+bindScrollSource();
+
+window.addEventListener('resize', () => {
+  bindScrollSource();
+  onScroll();
+});
 
   // ✅ 클릭 이벤트
   tocLinks.forEach((link) => {
